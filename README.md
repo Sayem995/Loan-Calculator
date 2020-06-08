@@ -1,2 +1,2 @@
 # Loan-Calculator
-![](giffy.gif)
+
