@@ -1,4 +1,4 @@
-// listen for submit
+
 
 document.getElementById('loan-form').addEventListener('submit', calculateResults)
 ;
@@ -17,7 +17,7 @@ function calculateResults(e){
     const calculatedInterest = parseFloat(interest.value) / 100 / 12;
     const calculatedPayments = parseFloat(years.value) * 12;
 
-    // compute monthly payments
+   
     const x = Math.pow(1 + calculatedInterest, calculatedPayments);
     const monthly = (principal*x*calculatedInterest)/(x-1);
 
@@ -33,25 +33,22 @@ function calculateResults(e){
     e.preventDefault();
 }
 
-// Show error
+
 
 function showError(error) {
-    // create divv
+   
     const errorDiv = document.createElement('div');
 
-    // get elements
     const card = document.querySelector('.card');
     const heading = document.querySelector('.heading');
 
 
-    // Add classs
     errorDiv.className = 'alert alert-danger';
 
-    // Create text node and append to div
 
     errorDiv.appendChild(document.createTextNode(error));
 
-    // inset error above heading
+    
     card.insertBefore(errorDiv, heading);
 
     
